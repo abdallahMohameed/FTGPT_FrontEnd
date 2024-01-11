@@ -70,18 +70,19 @@ export class ChatContentComponent
 
     this.messages.push(message);
     try {
+      debugger
       this.isBusy = true;
-      const completion = await this.chatService.createCompletionViaOpenAI(
+      const completion = await this.chatService.createCompletionViaLocalAI(
         this.messages
       );
       console.log(completion);
-      const completionMessage = this.markdownService.parse(
-        completion.data.choices[0].message?.content!
-      );
+      // const completionMessage = this.markdownService.parse(
+      //   completion.data.choices[0].message?.content!
+      // );
 
       const responseMessage: ChatCompletionRequestMessage = {
         role: 'assistant',
-        content: completionMessage,
+        content: completion,
       };
 
       this.messages.push(responseMessage);

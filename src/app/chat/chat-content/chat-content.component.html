@@ -23,7 +23,9 @@
             alt="user_photo"
           />
           <div class="align-middle">
-            <div class="prose prose-invert" [innerHTML]="message.content"></div>
+            <!-- <div class="prose prose-invert" [innerHTML]="message.content"></div> -->
+            <div class="prose prose-invert" [appTypingAnimation]="message.content"></div>
+
           </div>
         </div>
       </div>

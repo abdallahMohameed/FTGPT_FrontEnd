@@ -20,6 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
+import { TypingAnimationDirective } from './shared/Directives/typing-animation.directive';
 
 @NgModule({
   declarations: [
@@ -30,10 +32,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     SidebarComponent,
     ChatContentComponent,
     UserDialogComponent,
+    TypingAnimationDirective,
   ],
   imports: [
     EffectsModule.forRoot([]),
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     MatDialogModule,
     MatButtonModule,
